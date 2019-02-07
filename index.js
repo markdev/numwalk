@@ -6,9 +6,7 @@ var node = function (value, lesser, greater) {
 
 var original_tree = new node(null, null, null);
 
-var stream = [3, 9, 20, 4, 16, 10, 11, 30, 50];
-
-
+var stream = [60, 120, 2, 35, 1, 70, 30, 50];
 
 var tree_walk = function(tree, value) {
   if (tree == null) {
@@ -27,11 +25,8 @@ var tree_walk = function(tree, value) {
 
 var insert_next_stream_value_into_tree = function(tree, stream) {
   if (stream.length == 0) return tree;
-
   var value = stream.pop();
-
   var new_tree = tree_walk(tree, value);
-
   return insert_next_stream_value_into_tree(new_tree, stream);
 }
 
